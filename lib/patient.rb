@@ -7,7 +7,19 @@ class Patient
   end
   
   def new_appointment(date, doctor)
-    Appointment.new(date)
+    Appointment.new(date, self, doctor)
+  end
+  
+  def appointments
+    Appointment.all.select {|appointment| appointment.patient == self}
+  end
+  
+  def doctors
+    doctors = []
+    self.appointments.each{|appointment| doctors << appointment.doctor}
+    doctors
+  end
+  
   def self.all
     @@all
   end
