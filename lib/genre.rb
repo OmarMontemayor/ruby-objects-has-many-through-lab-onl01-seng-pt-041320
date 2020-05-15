@@ -15,4 +15,8 @@ class Genre
     self.songs.each { |song| artists << song.artist}
     artists
   end
+  
+  def self.all
+    @@all
+  end
 end
