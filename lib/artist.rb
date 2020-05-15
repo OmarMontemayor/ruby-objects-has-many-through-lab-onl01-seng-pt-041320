@@ -21,7 +21,6 @@ class Artist
     genres =[]
     self.songs.each {|song| genres << song.genre}
     genres
-    binding.pry
   end
   def self.all
     @@all
